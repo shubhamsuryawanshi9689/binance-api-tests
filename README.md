@@ -1,5 +1,9 @@
 # Binance Public API — Automated Test Suite
 
+[![Tests](https://github.com/shubhamsuryawanshi9689/binance-api-tests/actions/workflows/tests.yml/badge.svg)](https://github.com/shubhamsuryawanshi9689/binance-api-tests/actions/workflows/tests.yml)
+[![Python](https://img.shields.io/badge/python-3.11%20%7C%203.12-blue.svg)](https://www.python.org/)
+[![License](https://img.shields.io/badge/license-MIT-green.svg)](#)
+
 A Python `pytest` test suite for **Binance's public REST and WebSocket endpoints** — covering market data, exchange metadata, system endpoints, and live streaming feeds.
 
 Built to mirror the kind of black-box automation I ran for **3.6 years** against a real HFT trading platform (3rdEye / Wallstreet Algo Trading) that integrated Binance, Kraken, NSE/Fyers, and IBKR.

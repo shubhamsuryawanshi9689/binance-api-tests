@@ -34,7 +34,7 @@ These checks ran on every CI build in a 7-stage GitLab pipeline I maintained.
 
 ```bash
 # Clone
-git clone https://github.com/<your-username>/binance-api-tests.git
+git clone https://github.com/shubhamsuryawanshi9689/binance-api-tests.git
 cd binance-api-tests
 
 # Install

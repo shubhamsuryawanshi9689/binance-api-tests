@@ -1,8 +1,13 @@
+import os
+
 import pytest
 import requests
 
-BASE_URL = "https://api.binance.com"
-WS_URL = "wss://stream.binance.com:9443/ws"
+# Use Binance's public data endpoint by default — it has the same routes
+# as api.binance.com but is not geo-blocked, so the suite runs unchanged
+# from GitHub Actions / Azure / AWS CI runners.
+BASE_URL = os.environ.get("BINANCE_BASE_URL", "https://data-api.binance.vision")
+WS_URL = os.environ.get("BINANCE_WS_URL", "wss://data-stream.binance.vision/ws")
 SYMBOLS_UNDER_TEST = ["BTCUSDT", "ETHUSDT", "BNBUSDT"]
 
 

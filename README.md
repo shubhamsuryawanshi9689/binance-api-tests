@@ -83,6 +83,7 @@ binance-api-tests/
 ## Design choices
 
 - **No API key, no signed endpoints.** This is a public-API suite — safe to run in CI without secrets. The signed-endpoint flow (HMAC SHA-256) is documented but not exercised here to keep the repo runnable for reviewers.
+- **CI-friendly endpoint by default.** The suite hits `https://data-api.binance.vision` (Binance's public data domain) instead of `api.binance.com`, because the main API geo-blocks GitHub Actions / Azure / AWS runner IPs. Same routes, same responses, no auth, no block — point it at `api.binance.com` locally via `BINANCE_BASE_URL` env var if you want.
 - **Parametrized symbols.** Every market-data test runs across `BTCUSDT`, `ETHUSDT`, `BNBUSDT` via `@pytest.mark.parametrize` — catches per-symbol regressions without copy-pasting tests.
 - **WebSocket tests are time-boxed.** Each stream test collects N frames or times out after 10 s — never hangs CI.
 - **Failure-friendly assertions.** Every assertion has a custom message that prints the offending payload — faster to triage than a bare `AssertionError`.
